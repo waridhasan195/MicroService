@@ -5,7 +5,7 @@ namespace Catalog.API.Context
     public class CatalogDbContext : ApplicationDbContext
     {
         static IConfiguration Configuration = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("appsettings.json", true, true)
+            .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
             .Build();
 
         static string connectionString = Configuration.GetConnectionString("Catalog.API");
